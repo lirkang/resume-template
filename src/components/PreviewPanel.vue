@@ -17,13 +17,15 @@ const ui = useUI();
 <template>
   <div
     class="transition-all text-base flex flex-col gap-y-2 relative"
-    :style="{ padding: `${ui.theme.padding * (ui.previewMode ? 4 : 1)}px`, paddingTop: `${ui.theme.padding * 5}px` }"
+    :style="{ padding: `${ui.theme.padding * (ui.previewMode ? 4 : 1)}px` }"
   >
     <div
       class="absolute top-0 left-0 right-0 transition-all"
       :class="[ui.showTopBg ? 'h-4' : 'h-0']"
       :style="{ backgroundColor: ui.theme.primaryColor }"
     ></div>
+
+    <div :class="[ui.showTopBg ? 'h-8' : 'h-0']"></div>
 
     <ResumePreview v-if="ui.displayModules.information" />
     <EducationPreview v-if="ui.displayModules.educationExperiences" />

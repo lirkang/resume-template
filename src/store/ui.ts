@@ -16,7 +16,7 @@ const useUI = defineStore('ui', {
     titleStyle: 0,
     theme: {
       padding: 0,
-      primaryColor: 'green',
+      primaryColor: '#2B9F19',
     },
     displayMode: <DisplayMode>'horizontal',
     displaySize: <DisplaySize>'medium',
