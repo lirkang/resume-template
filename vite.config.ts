@@ -17,5 +17,5 @@ export default defineConfig({
     ],
   },
   server: { hmr: true },
-  base: '/resume',
+  base: '/resume-template',
 });
