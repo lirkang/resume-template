@@ -54,8 +54,8 @@ const useResumeForm = defineStore('resume-form', {
   }),
 
   getters: {
-    gender: state => GENDER[state.modules.information.gender],
-    age: state => `${state.modules.information.age}岁`,
+    gender: state => GENDER[state.modules.information.gender ?? 0],
+    age: state => `${state.modules.information.age || 0}岁`,
   },
 
   persist: true,

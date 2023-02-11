@@ -30,7 +30,8 @@ watch([showInput], () => {
   <div class="plate">
     <div
       class="text-slate-800 w-full mb-4 flex items-center gap-x-2"
-      :class="[{ 'border-b-slate-700 border-b-2 border-solid': ui.titleStyle !== 1, 'py-1': ui.titleStyle !== 1 }]"
+      :class="[{ 'border-b-2 border-solid': ui.titleStyle !== 1, 'py-1': ui.titleStyle !== 1 }]"
+      :style="{ borderBottomColor: `${ui.theme.primaryColor}66` }"
     >
       <ElIcon v-if="ui.showIcons" :size="22" :color="ui.theme.primaryColor">
         <slot name="icon"></slot>

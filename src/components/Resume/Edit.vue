@@ -1,13 +1,10 @@
 <script setup lang="ts" name="ResumeEdit">
 import useResumeForm, { GENDER } from '@/store/resumeForm';
 import useUI from '@/store/ui';
-import { ElForm, ElFormItem, ElInput, ElOption, ElSelect } from 'element-plus';
-import { watchEffect } from 'vue';
+import { ElForm, ElFormItem, ElInput, ElInputNumber, ElOption, ElSelect } from 'element-plus';
 
 const resumeForm = useResumeForm();
 const ui = useUI();
-
-watchEffect(() => {});
 </script>
 
 <template>
@@ -33,7 +30,7 @@ watchEffect(() => {});
     </ElFormItem>
 
     <ElFormItem label="年龄">
-      <ElInput v-model.trim.number="resumeForm.modules.information.age" />
+      <ElInputNumber :max="100" :min="1" controls v-model="resumeForm.modules.information.age" />
     </ElFormItem>
 
     <ElFormItem label="性别">

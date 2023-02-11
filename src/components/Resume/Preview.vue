@@ -22,7 +22,7 @@ const resumeInformation = computed(() =>
     [resumeForm.modules.information.job, Workbench],
     [resumeForm.modules.information.email, EmailPush],
     [resumeForm.modules.information.phone, Phone],
-  ].filter(Boolean)
+  ].filter(([val]) => val)
 );
 
 const alignClass = computed(() => align[ui.resumeAlign]);
@@ -32,7 +32,7 @@ const alignClass = computed(() => align[ui.resumeAlign]);
   <div :class="['flex mb-8 flex-col gap-y-4', alignClass]">
     <div class="flex font-bold text-4xl" :class="alignClass">{{ resumeForm.modules.information.name }}</div>
 
-    <div class="flex flex-col text-gray-600 gap-1">
+    <div class="flex flex-col text-gray-600 gap-1 tracking-wider">
       <div
         class="flex items-center"
         :class="alignClass"
@@ -44,7 +44,7 @@ const alignClass = computed(() => align[ui.resumeAlign]);
           <span class="text-sm">{{ resumeInformation[index * 2][0] }}</span>
         </span>
 
-        <template v-if="resumeInformation[index * 2 + 1][0]">
+        <template v-if="resumeInformation[index * 2 + 1]">
           <ElDivider direction="vertical" />
 
           <span class="flex items-center gap-x-2">
